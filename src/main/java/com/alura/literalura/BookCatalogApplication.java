@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LiteraluraApplication {
+public class BookCatalogApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(LiteraluraApplication.class, args);
+    SpringApplication.run(BookCatalogApplication.class, args);
   }
-
 }

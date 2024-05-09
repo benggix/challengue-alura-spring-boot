@@ -1,5 +1,6 @@
 package com.alura.literalura.model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,16 +12,11 @@ public class Author {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private String firstName;
-  private String lastName;
 
-  public Author() {
-  }
+  private String authorName;
+  private int birthYear;
+  private int deathYear;
 
-  public Author(String firstName, String lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
 
   public Long getId() {
     return id;
@@ -30,28 +26,27 @@ public class Author {
     this.id = id;
   }
 
-  public String getFirstName() {
-    return firstName;
+  public String getAuthorName() {
+    return authorName;
   }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
+  public void setAuthorName(String authorName) {
+    this.authorName = authorName;
   }
 
-  public String getLastName() {
-    return lastName;
+  public int getBirthYear() {
+    return birthYear;
   }
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
+  public void setBirthYear(int birthYear) {
+    this.birthYear = birthYear;
   }
 
-  @Override
-  public String toString() {
-    return "Author{" +
-            "id=" + id +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            '}';
+  public int getDeathYear() {
+    return deathYear;
+  }
+
+  public void setDeathYear(int deathYear) {
+    this.deathYear = deathYear;
   }
 }

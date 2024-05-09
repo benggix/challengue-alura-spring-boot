@@ -1,26 +1,21 @@
 package com.alura.literalura.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
-public class Book {
 
+@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Book {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String title;
-  private String author;
-
-  public Book() {
-  }
-
-  public Book(String title, String author) {
-    this.title = title;
-    this.author = author;
-  }
+  private String languages;
+  private int downloadCount;
 
   public Long getId() {
     return id;
@@ -38,20 +33,19 @@ public class Book {
     this.title = title;
   }
 
-  public String getAuthor() {
-    return author;
+  public String getLanguages() {
+    return languages;
   }
 
-  public void setAuthor(String author) {
-    this.author = author;
+  public void setLanguages(String languages) {
+    this.languages = languages;
   }
 
-  @Override
-  public String toString() {
-    return "Book{" +
-            "id=" + id +
-            ", title='" + title + '\'' +
-            ", author='" + author + '\'' +
-            '}';
+  public int getDownloadCount() {
+    return downloadCount;
+  }
+
+  public void setDownloadCount(int downloadCount) {
+    this.downloadCount = downloadCount;
   }
 }
